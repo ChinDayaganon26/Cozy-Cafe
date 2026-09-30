@@ -1,0 +1,457 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Cozy Café V2</title>
+
+<link rel="stylesheet"
+      href="style.css">
+
+</head><body><!-- ================= NAVBAR ================= --><nav><div class="logo">
+    ☕ Cozy Café
+</div>
+
+<div class="nav-links">
+
+    <button onclick="showPage('home')">
+        Home
+    </button>
+
+    <button onclick="showPage('menu')">
+        Menu
+    </button>
+
+    <button onclick="openCart()">
+        🛒 <span id="cartCount">0</span>
+    </button>
+
+</div>
+
+</nav><!-- ================= HOME ================= --><section id="home" class="page active"><div class="hero">
+
+    <div class="hero-content">
+
+        <span class="welcome">
+            WELCOME TO
+        </span>
+
+        <h1>
+            Cozy Café
+        </h1>
+
+        <p>
+            Your favorite coffee,
+            food and drinks in one cozy place.
+        </p>
+
+        <button class="main-btn"
+                onclick="showPage('menu')">
+
+            Order Now ☕
+
+        </button>
+
+    </div>
+
+    <div class="hero-coffee">
+
+        ☕
+        
+        <div class="steam">
+            ♨
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="popular">
+
+    <h2>
+        Popular Today ⭐
+    </h2>
+
+    <div class="popular-card">
+
+        <span>🥤</span>
+
+        <div>
+            <h3>Iced Caramel Latte</h3>
+            <p>₱135</p>
+        </div>
+
+        <button onclick="addToCart('Iced Caramel Latte',135)">
+            +
+        </button>
+
+    </div>
+
+</div>
+
+</section><!-- ================= MENU ================= --><section id="menu" class="page"><div class="section-title">
+
+    <span>OUR MENU</span>
+
+    <h2>
+        Choose Your Favorite
+    </h2>
+
+</div>
+
+
+<!-- CATEGORIES -->
+
+<div class="categories">
+
+    <button onclick="filterMenu('all')">
+        All
+    </button>
+
+    <button onclick="filterMenu('coffee')">
+        ☕ Coffee
+    </button>
+
+    <button onclick="filterMenu('food')">
+        🍰 Food
+    </button>
+
+    <button onclick="filterMenu('drink')">
+        🥤 Drinks
+    </button>
+
+</div>
+
+
+<!-- MENU -->
+
+<div class="menu-grid">
+
+
+    <div class="menu-card coffee">
+
+        <div class="item-icon">
+            ☕
+        </div>
+
+        <h3>Caramel Latte</h3>
+
+        <p>
+            Creamy coffee with caramel
+        </p>
+
+        <strong>
+            ₱120
+        </strong>
+
+        <button onclick="addToCart('Caramel Latte',120)">
+            Add
+        </button>
+
+    </div>
+
+
+    <div class="menu-card coffee">
+
+        <div class="item-icon">
+            🧋
+        </div>
+
+        <h3>Iced Coffee</h3>
+
+        <p>
+            Cold and refreshing
+        </p>
+
+        <strong>
+            ₱100
+        </strong>
+
+        <button onclick="addToCart('Iced Coffee',100)">
+            Add
+        </button>
+
+    </div>
+
+
+    <div class="menu-card coffee">
+
+        <div class="item-icon">
+            🍵
+        </div>
+
+        <h3>Matcha Latte</h3>
+
+        <p>
+            Smooth creamy matcha
+        </p>
+
+        <strong>
+            ₱130
+        </strong>
+
+        <button onclick="addToCart('Matcha Latte',130)">
+            Add
+        </button>
+
+    </div>
+
+
+    <div class="menu-card food">
+
+        <div class="item-icon">
+            🥐
+        </div>
+
+        <h3>Butter Croissant</h3>
+
+        <p>
+            Fresh and crispy
+        </p>
+
+        <strong>
+            ₱85
+        </strong>
+
+        <button onclick="addToCart('Butter Croissant',85)">
+            Add
+        </button>
+
+    </div>
+
+
+    <div class="menu-card food">
+
+        <div class="item-icon">
+            🍰
+        </div>
+
+        <h3>Strawberry Cake</h3>
+
+        <p>
+            Sweet strawberry cake
+        </p>
+
+        <strong>
+            ₱150
+        </strong>
+
+        <button onclick="addToCart('Strawberry Cake',150)">
+            Add
+        </button>
+
+    </div>
+
+
+    <div class="menu-card food">
+
+        <div class="item-icon">
+            🍪
+        </div>
+
+        <h3>Chocolate Cookie</h3>
+
+        <p>
+            Soft chocolate cookie
+        </p>
+
+        <strong>
+            ₱70
+        </strong>
+
+        <button onclick="addToCart('Chocolate Cookie',70)">
+            Add
+        </button>
+
+    </div>
+
+
+    <div class="menu-card drink">
+
+        <div class="item-icon">
+            🥤
+        </div>
+
+        <h3>Strawberry Soda</h3>
+
+        <p>
+            Fizzy strawberry drink
+        </p>
+
+        <strong>
+            ₱110
+        </strong>
+
+        <button onclick="addToCart('Strawberry Soda',110)">
+            Add
+        </button>
+
+    </div>
+
+
+    <div class="menu-card drink">
+
+        <div class="item-icon">
+            🍓
+        </div>
+
+        <h3>Strawberry Milk</h3>
+
+        <p>
+            Sweet creamy milk
+        </p>
+
+        <strong>
+            ₱125
+        </strong>
+
+        <button onclick="addToCart('Strawberry Milk',125)">
+            Add
+        </button>
+
+    </div>
+
+</div>
+
+</section><!-- ================= CART ================= --><div id="cartModal" class="modal"><div class="cart-box">
+
+    <button class="close"
+            onclick="closeCart()">
+        ✕
+    </button>
+
+    <h2>
+        🛒 Your Order
+    </h2>
+
+    <div id="cartItems">
+
+        <p class="empty">
+            Your cart is empty.
+        </p>
+
+    </div>
+
+
+    <div class="cart-total">
+
+        <span>
+            Total
+        </span>
+
+        <strong>
+            ₱<span id="total">0</span>
+        </strong>
+
+    </div>
+
+
+    <button class="checkout-btn"
+            onclick="openCheckout()">
+
+        Checkout
+
+    </button>
+
+</div>
+
+</div><!-- ================= CHECKOUT ================= --><div id="checkoutModal"
+     class="modal"><div class="checkout-box">
+
+    <button class="close"
+            onclick="closeCheckout()">
+        ✕
+    </button>
+
+    <h2>
+        🧾 Checkout
+    </h2>
+
+
+    <label>
+        Customer Name
+    </label>
+
+    <input id="customerName"
+           type="text"
+           placeholder="Enter your name">
+
+
+    <label>
+        Payment Method
+    </label>
+
+    <select id="payment">
+
+        <option>
+            Cash
+        </option>
+
+        <option>
+            GCash
+        </option>
+
+        <option>
+            Card
+        </option>
+
+    </select>
+
+
+    <div class="checkout-total">
+
+        Total:
+        ₱<span id="checkoutTotal">
+            0
+        </span>
+
+    </div>
+
+
+    <button class="checkout-btn"
+            onclick="placeOrder()">
+
+        Place Order ☕
+
+    </button>
+
+</div>
+
+</div><!-- ================= RECEIPT ================= --><div id="receiptModal"
+     class="modal"><div class="receipt">
+
+    <div class="success">
+        ✓
+    </div>
+
+    <h2>
+        Order Successful!
+    </h2>
+
+    <p>
+        Thank you for ordering at Cozy Café.
+    </p>
+
+    <div id="receiptDetails"></div>
+
+    <button class="checkout-btn"
+            onclick="closeReceipt()">
+
+        Done
+
+    </button>
+
+</div>
+
+</div><!-- ================= TOAST ================= --><div id="toast">
+    Added to cart ☕
+</div><footer><h3>
+    ☕ Cozy Café
+</h3>
+
+<p>
+    Fresh coffee • Good food • Cozy moments
+</p>
+
+</footer><script src="script.js"></script></body></html>
